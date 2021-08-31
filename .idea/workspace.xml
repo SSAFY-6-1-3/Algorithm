@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98cbf7b1-a336-4579-b9a9-c46633000cc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/0830/77884_junh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0800(ex)/1111_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0800(ex)/2222_input.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="98cbf7b1-a336-4579-b9a9-c46633000cc9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,11 +10,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/0830/77884_junh.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
               <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/0830/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -42,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="2873" />
     <option name="y" value="-475" />
     <option name="width" value="974" />
@@ -64,6 +70,11 @@
               <item name="Algorithm_study" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algorithm_study" type="462c0819:PsiDirectoryNode" />
               <item name="0830" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Algorithm_study" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algorithm_study" type="462c0819:PsiDirectoryNode" />
+              <item name="0831" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -101,7 +112,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2873" y="-475" width="974" height="1047" extended-state="1" />
+    <frame x="2873" y="-475" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -128,6 +139,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/0830/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>

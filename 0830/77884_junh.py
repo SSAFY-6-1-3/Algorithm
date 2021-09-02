@@ -7,7 +7,7 @@ def solution(left, right):
             if num % i == 0:
                 cnt += 1
 
-        if cnt % 2:
+        if cnt % 2: # 홀수 + 자기자신 =짝수
             answer += num
         else:
             answer -= num

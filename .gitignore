@@ -2,6 +2,13 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,pycharm,visualstudiocode,python,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,pycharm,visualstudiocode,python,django
 
+# 직접 추가
+Algorithm_study.iml
+encodings.xml
+misc.xml
+modules.xml
+vcs.xml
+
 ### Django ###
 *.log
 *.pot

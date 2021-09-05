@@ -3,11 +3,12 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,pycharm,visualstudiocode,python,django
 
 # 직접 추가
-Algorithm_study.iml
-encodings.xml
-misc.xml
-modules.xml
-vcs.xml
+.idea/**/Algorithm_study.iml
+.idea/**/encodings.xml
+.idea/**/misc.xml
+.idea/**/modules.xml
+.idea/**/vcs.xml
+
 
 ### Django ###
 *.log

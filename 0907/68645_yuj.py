@@ -23,12 +23,6 @@ while cnt < number+1:
         y = ny
     else:
         dir = (dir + 1) % 3
-        # for i in range(3):
-        #     if 0<=x+dx[i]<n and 0<=y+dy[i]<n and arr[x+dx[i]][y+dy[i]] == 0:
-        #         dir = (dir+1) % 3
-        #         break
-        # else:
-        #     break
 
 for i in range(n):
     for j in range(n):

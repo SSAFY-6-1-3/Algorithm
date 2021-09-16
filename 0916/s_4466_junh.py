@@ -4,9 +4,9 @@ sys.stdin = open('s_4466_input.txt')
 
 def calc(n, k, scores):
     rtn = 0
-    scores.sort(reverse=True)
+    scores.sort(reverse=True) # 역으로 정렬
     for i in range(k):
-        rtn += scores[i]
+        rtn += scores[i] # 높은 순으로 k개 뽑아서 합침
     return rtn
 
 T = int(input())

@@ -1,18 +1,23 @@
 def queens(y, n): # 실질적으로 y값만 인자로 사용
     if y == n: #
         return 1
+
+
     q_sum = 0
     for x in range(n):
         if board[y][x]:
             continue
-        for d in range(n-y):
+
+        for d in range(n-y): # 못두는데 체크
             board[y+d][x] += 1
             if x-d >= 0:
                 board[y+d][x-d] += 1
             if x+d < n:
                 board[y+d][x+d] += 1
+
         q_sum += queens(y+1, n)
-        for d in range(n - y):
+
+        for d in range(n - y): # 못 두는 데를 체크 풀기
             board[y + d][x] -= 1
             if x - d >= 0:
                 board[y+d][x-d] -= 1

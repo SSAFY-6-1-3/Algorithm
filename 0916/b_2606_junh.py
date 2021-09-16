@@ -1,14 +1,14 @@
 def infection(com):
-    rtn = 0
-    queue = [com]
-    computers[com] = True
+    rtn = 0 # 감염된 갯수
+    queue = [com] # 큐. 시작 컴퓨터 하나 담음
+    computers[com] = True # 시작 컴퓨터 감염 True
     while queue:
-        c = queue.pop(0)
+        c = queue.pop(0) # 큐의 컴퓨터 하나를 빼서
         for i in range(1, T+1):
-            if networks[c][i] and not computers[i]:
-                queue.append(i)
-                computers[i] = True
-                rtn += 1
+            if networks[c][i] and not computers[i]: # c와 연결돼있고 감염이 안 된 컴퓨터는
+                queue.append(i) # 큐에 담고
+                computers[i] = True # 감염 True
+                rtn += 1 # 감염수 +1
     return rtn
 
 

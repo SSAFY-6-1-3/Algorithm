@@ -18,9 +18,9 @@ def solution(s):
     while s:
         c = s.pop(0)
         if '0' <= c <= '9':
-            answer += (c)
+            answer += c
             continue
-        c_num = c
+        c_num = c # on
         while c_num not in roseta:
             c_num += s.pop(0)
 

@@ -8,6 +8,7 @@ def solution(numbers, target):
             if n_sum == target:
                 answer += 1
             return
+
         for c in range(2):
             if c :
                 recur(idx + 1, n_sum + numbers[idx])

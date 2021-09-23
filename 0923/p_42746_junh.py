@@ -21,7 +21,7 @@ def solution(numbers):
             answer.pop(0)
         else:
             break
-    answer = ''.join(answer)
+    answer = ''.join(answer) # dd
     return answer
 
 

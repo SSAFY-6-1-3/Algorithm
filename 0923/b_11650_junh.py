@@ -7,7 +7,7 @@
 
 import sys
 input=sys.stdin.readline # 입력 속도 문제였다.
-
+# i
 N = int(input())
 li = []
 for _ in range(N):

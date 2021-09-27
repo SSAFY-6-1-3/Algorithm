@@ -9,10 +9,10 @@ def solution(board, moves):
                 if stack and (stack[-1] == board[i][j-1]):      # 넣을 인형이 stack의 마지막 인형이랑 비교
                     stack.pop()                                 # 마지막 인형과 같은 인형이라면 마지막 인형 빼기
                     cnt += 2                                    # 총 2개의 인형이 빠짐
-                    break
+
                 else:
                     stack.append(board[i][j-1])                 # 마지막 인형이랑 같은 인형이 아니라면 바구니에 인형 추가
-                    break
+                break
         board[i][j - 1] = 0                                     # 크레인으로 뽑은 인형 0으로 바꿔주기
 
     return cnt

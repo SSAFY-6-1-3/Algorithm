@@ -6,7 +6,7 @@ for tc in range(1, T+1):
     N = int(input())
     lst = list(map(int,input().split()))
     sum_lst = [1] + [0] * (N-1)                 # 증가 수열 개수 저장해놓을 리스트
-    max_idx = 0
+
 
     for i in range(1, N):                       # 현재 위치 이전까지 증가 수열 개수 확인하기
         for j in range(i-1,-1,-1):

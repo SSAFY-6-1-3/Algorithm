@@ -6,8 +6,6 @@ MOVES = [(1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
 
 
 def change(y, x, clr, move, inverted):
-    if inverted and board[y][x] == clr:
-        return True
     ny, nx = y + move[0], x + move[1]
     if ny not in range(N+1) or nx not in range(N+1) or not board[ny][nx]:
         return False
@@ -15,7 +13,7 @@ def change(y, x, clr, move, inverted):
     if board[ny][nx] == -clr:
         changed = change(ny, nx, clr, move, True)
     elif inverted and board[ny][nx] == clr:
-        changed = change(ny, nx, clr, move, True)
+        changed = True
 
     if changed:
         board[y][x] = clr

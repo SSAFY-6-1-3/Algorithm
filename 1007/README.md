@@ -11,8 +11,6 @@
 
 - SWEA 1244 최대 상금
 
-
-
 #### 프로그래머스 (p_00000_name)
 
 - https://programmers.co.kr/learn/courses/30/lessons/ + 00000(문제번호)

@@ -7,7 +7,7 @@ while True:
     for c in st:
         if c == '(' or c=='[':
             stack.append(c)
-        elif not stack and (c == ')' or c == ']'):
+        elif not stack and c == ')' or c == ']':
             print('no')
             break
         elif c ==')' and stack.pop() != '(':

@@ -12,6 +12,7 @@ for _ in range(N):
         books[book] = 1
 
 bestsellers = sorted(books.items(), key=lambda x:x[1])   # 딕셔너리 value에 따라 오름차순으로 정렬
+print(bestsellers)
 
 bestseller = []
 

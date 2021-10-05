@@ -2,7 +2,6 @@ import sys
 sys.stdin=open('input.txt')
 
 def snow(ball, now, M):
-    global result
 
     if now >= N or M == 0:          # 남아있는 시간이 0이거나/ 현재 위치가 마지막 위치보다 클 때
         result.append(ball)         # 마지막 눈덩이 리스트에 추가하기

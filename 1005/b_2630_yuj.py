@@ -9,6 +9,7 @@ def divide(x, y, N):
         for j in range(y, y+N):
             sum_result += paper[i][j]
 
+
     if sum_result == 0:                     # 합이 0이라면 모두 하얀색
         white += 1
         return
@@ -20,7 +21,7 @@ def divide(x, y, N):
     else:                                   # 4분할씩 나눠주면서 재귀
         divide(x, y, N//2)
         divide(x+N//2, y, N//2)
-        divide(x, y+N//2, N//2)ㄴ
+        divide(x, y+N//2, N//2)
         divide(x+N//2, y+N//2, N//2)
 
 

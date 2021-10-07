@@ -8,7 +8,7 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     heap = []
-    heapq._heapify_max(heap)
+    heapq.heapify(heap)
     result = []
 
     for _ in range(N):

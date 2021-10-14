@@ -11,7 +11,7 @@ def protect(i, j):
         ni = i + di[k]
         nj = j + dj[k]
         if 0 <= ni < N and 0 <= nj < M:
-            if field[ni][nj] == 1:
+            if field[ni][nj] == 1:              # 배추 확인했으니까 0으로 변경
                 field[ni][nj] = 0
                 protect(ni, nj)
 
@@ -20,12 +20,12 @@ T = int(input())
 for tc in range(T):
     M, N, K = map(int, input().split())
     field = [[0] * M for _ in range(N)]
-    for _ in range(K):
+    for _ in range(K):                          # 배추위치 설정
         y, x = map(int, input().split())
         field[x][y] = 1
 
-    cnt = 0
-    for i in range(N):
+    cnt = 0                                     # 그룹 갯수 세기
+    for i in range(N):                          # 배추있는 곳부터 dfs
         for j in range(M):
             if field[i][j] == 1:
                 protect(i, j)

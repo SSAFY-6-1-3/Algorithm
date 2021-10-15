@@ -12,14 +12,7 @@
 - SWEA 1244 최대 상금
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 183040bfd0961746940d9a25c5050fcbb3d1ffeb
-=======
-
->>>>>>> 42780672655bbad04b07b1a0231edc047aee6cc8
 #### 프로그래머스 (p_00000_name)
 
 - https://programmers.co.kr/learn/courses/30/lessons/ + 00000(문제번호)

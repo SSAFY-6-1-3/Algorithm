@@ -10,7 +10,7 @@ def hello(idx, hp, hpn):
     if hpn > max_gain:
         max_gain = hpn
 
-    for i in range(idx, N):
+    for i in range(idx+1, N):
         if not helloed[i]:
             helloed[i] = True
             hello(i, hp - cost[i], hpn+gain[i])

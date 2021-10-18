@@ -2,15 +2,11 @@ def solution(life, idx, result):
     global answer
 
     for i in range(idx, N):
-        if visited[i]:
-            continue
 
         if life-L[i] <= 0:
             continue
 
-        visited[i] = 1
         solution(life-L[i], i+1, result+J[i])
-        visited[i] = 0
 
     if answer < result:
         answer = result

@@ -1,3 +1,4 @@
+from collections import deque
 import sys
 
 sys.stdin = open('s_2117.txt')
@@ -9,22 +10,18 @@ def make_size_dp(k=2):
     if k <= N//2+1:
         size_dp.append(size)
         make_size_dp(k+1)
-
+        
 
 def isOK(size, M, mat):
-    for k in range(size, 0, -1):
-        cost = k **2 + (k-1)**2
-
-        for i in range(N):
-            for j in range(N):
-                pass
+    for i in range(N):
+        for j in range(N):
 
 
-def check(i, j, k, M, cost):
-    for y in range(i-k, i+k+1):
-        for x in range(j-k, j+k+1):
-            if abs(y-i) + abs(x-j) < k:
-                mat[y][x] = '*'
+
+def check(i, j, M, size):
+    q = deque([(i, j, 1)])
+    k=1
+    while k < size:
 
 
 T = int(input())

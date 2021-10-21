@@ -10,7 +10,7 @@ def make_size_dp(k=2):
     if k <= N//2+1:
         size_dp.append(size)
         make_size_dp(k+1)
-
+        
 
 def isOK(size, M, mat):
     for i in range(N):

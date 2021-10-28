@@ -1,5 +1,5 @@
 from collections import deque
-
+q = deque([])
 def boom(n, balloons):
     rtn = []
     idx = 0

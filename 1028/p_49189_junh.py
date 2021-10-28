@@ -24,6 +24,7 @@ def solution(n, edge):
         if distance[n] == max_dist:
             answer +=1
     return answer
+    return answer
 
 
 

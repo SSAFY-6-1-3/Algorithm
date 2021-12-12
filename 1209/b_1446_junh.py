@@ -27,6 +27,3 @@ for short_cut in short_cuts:
 
 
 print(dp[D])
-
-
-

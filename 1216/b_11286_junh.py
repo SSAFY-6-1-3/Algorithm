@@ -3,7 +3,7 @@ import heapq
 
 input = sys.stdin.readline
 
-pl_mi = {}
+minuses = {}
 
 heap = []
 heapq.heapify(heap)
@@ -13,18 +13,18 @@ for _ in range(N):
     n = int(input())
     if n:
         heapq.heappush(heap, abs(n))
-        if pl_mi.get(n) != None:
-            pl_mi[n] += 1
-        else:
-            pl_mi[n] = 1
+        if n<0:
+            if minuses.get(-n) != None:
+                minuses[-n] += 1
+            else:
+                minuses[-n] = 1
     else:
         if heap:
             popped = heapq.heappop(heap)
-            if pl_mi.get(-popped) != None and pl_mi.get(-popped) > 0:
-                pl_mi[-popped] -= 1
+            if minuses.get(popped) != None and minuses.get(popped) > 0:
+                minuses[popped] -= 1
                 print(-popped)
             else:
-                pl_mi[popped] -= 1
                 print(popped)
         else:
             print(0)

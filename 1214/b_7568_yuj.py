@@ -7,7 +7,7 @@ for idx in range(N):
 
 people.sort()
 result[people[-1][2]] = 1
-
+print(people)
 for i in range(N-1):
     cnt = 1
     for j in range(i+1, N):

@@ -14,12 +14,10 @@ def adv(C, N, cities):
             rest_dp[i] = min(rest_dp[i], rest_dp[i-c[1]]+c[0])
     return min(rest_dp[C:])
 
-
 C, N = map(int, input().split())
 cities = [list(map(int, input().split())) for _ in range(N)]
 
 print(adv(C, N, cities))
-
 
 # def adv(C, N, cities):
 #     cities.sort(key=lambda x: -(x[1] / x[0]))

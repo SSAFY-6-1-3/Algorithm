@@ -1,0 +1,5 @@
+X, Y = map(str, input().split())
+newX = int(X[::-1])
+newY = int(Y[::-1])
+num = str(newX + newY)
+print(int(num[::-1]))

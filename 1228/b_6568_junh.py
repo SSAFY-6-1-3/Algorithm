@@ -1,20 +1,17 @@
-
-memory = ['11111111' for _ in range(32)]
-calc = '0'*8
-pc = '0'*5
+import sys
+input = sys.stdin.readline
+# sys.stdin = open('input.txt')
 
 def STA(val):
-    val = int(val, 2)
     memory[val] = calc
 
 def LDA(val):
     global calc
-    val = int(val, 2)
     calc = memory[val]
 
 def BEQ(val):
     global pc
-    if not int(calc):
+    if not calc:
         pc = val
 
 def NOP():
@@ -22,58 +19,56 @@ def NOP():
 
 def DEC():
     global calc
-    tmp = int(calc, 2)-1
-    tmp = bin(tmp)[2:]
-    if len(tmp)>8:
-        tmp = tmp[-8:]
-    calc = '0'*(8-len(tmp)) + tmp
+    calc = (calc-1) % 256
 
 def INC():
     global calc
-    tmp = int(calc, 2)+1
-    tmp = bin(tmp)[2:]
-    if len(tmp)>8:
-        tmp = tmp[-8:]
-    calc = '0'*(8-len(tmp)) + tmp
+    calc = (calc+1) % 256
 
 def JMP(val):
     global pc
     pc = val
 
 def HLT():
-    global calc, pc
-    print(calc)
-    calc = '0'*8
-    pc = '0'*5
+    pass
 
 def com_start():
     global pc
-    tmp = int(pc, 2) + 1
-    tmp = bin(tmp)[2:]
-    if len(tmp)>5:
-        tmp = tmp[-5:]
-    pc = '0' * (5 - len(tmp)) + tmp
+    pc = (pc + 1) % 32
 
 
-for _ in range(32):
-    inp = input()
-    com = inp[:3]
-    val = inp[3:]
+while True:
+    memory = [0 for _ in range(32)]
+    for i in range(32):
+        try:
+            memory[i] = int(input().rstrip(), 2)
+        except:                 # EOFError 말고 전체 Error로
+            sys.exit()
+    calc = 0
+    pc = 0
 
-    com_start()
-    if com == '000':
-        STA(val)
-    elif com == '001':
-        LDA(val)
-    elif com == '010':
-        BEQ(val)
-    elif com == '011':
-        NOP()
-    elif com == '100':
-        DEC()
-    elif com == '101':
-        INC()
-    elif com == '110':
-        JMP(val)
-    elif com == '111':
-        HLT()
+    while True:
+        inp = memory[pc]
+        com = inp//32
+        val = inp%32
+        com_start()
+
+        if com == 0:
+            STA(val)
+        elif com == 1:
+            LDA(val)
+        elif com == 2:
+            BEQ(val)
+        elif com == 3:
+            NOP()
+        elif com == 4:
+            DEC()
+        elif com == 5:
+            INC()
+        elif com == 6:
+            JMP(val)
+        elif com == 7:
+            HLT()
+            break
+
+    print(bin(calc)[2:].zfill(8))

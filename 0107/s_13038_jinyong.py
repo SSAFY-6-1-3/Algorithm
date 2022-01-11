@@ -2,7 +2,7 @@ def find_days(n, days, temp):
     answer = 0
     week, day = divmod(n, days)
 
-    if day == 0:  # 나누어 떨어지면 마지막 주에는 마지막 강의가 개설된 날짜를 더해주면 된다
+    if day == 0:
         answer += (week - 1) * 7
         day = days
     else:

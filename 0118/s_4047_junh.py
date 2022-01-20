@@ -4,7 +4,7 @@ sys.stdin = open('s_4047_input.txt')
 
 def solut(cards):
     dic = {
-        'S': [0] * 14,
+        'S' : [0] * 14,
         'D': [0] * 14,
         'H': [0] * 14,
         'C': [0] * 14,

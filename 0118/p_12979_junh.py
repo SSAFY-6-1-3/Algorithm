@@ -15,3 +15,4 @@ def solution(n, stations, w):
     return answer
 
 print(solution(11, [4, 11], 1))
+

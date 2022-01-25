@@ -10,11 +10,11 @@ def move(now, prev, dir):
     else:
         wheels[now] = wheels[now][7:] + wheels[now][:7]
 
-    if prev <= now and now < 4:
+    if prev <= now < 4:
         if to_r != wheels[now+1][6]:
             move(now + 1, now, -dir)
 
-    if prev >= now and now > 1:
+    if 1 < now <= prev:
         if to_l != wheels[now-1][2]:
             move(now - 1, now, -dir)
 

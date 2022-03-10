@@ -21,7 +21,12 @@ def compare(res, L):
         answer = [copy.deepcopy(L)]
         maxV = res
     elif maxV == res:
-        answer.append(copy.deepcopy(L))
+        for k in range(10, -1, -1):
+            if answer[0][k] < L[k]:
+                answer = [copy.deepcopy(L)]
+                break
+            elif answer[0][k] > L[k]:
+                break
 
 
 def solution(n, info):
@@ -50,8 +55,8 @@ def solution(n, info):
     score(0, [0] * 11, [0] * 11, 0)
     if not answer:
         return [-1]
-    answer.sort(key = lambda x : x[::-1])
-    return answer[-1]
+    # answer.sort(key=lambda x: x[::-1])
+    return answer[0]
 
 print(solution(5, [2,1,1,1,0,0,0,0,0,0,0]))
 print(solution(1, [1,0,0,0,0,0,0,0,0,0,0]))

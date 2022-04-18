@@ -1,22 +1,25 @@
 N = int(input())
-papers = [[list(map(int, input().split())) for _ in range(N)]]
-answer = 0
-
-def sol(papers):
+paper = [list(map(int, input().split())) for _ in range(N)]
+dic = {0:0, 1:0, -1:0}
 
 
-def is_ok(paper):
+def check(paper):
     li = []
     for r in paper:
         li.extend(r)
     if len(set(li)) == 1:
-        return True
-    return False
+        dic[li[0]] += 1
+    else:
+        size = len(paper)//3
+        if not size: return
+        for r in range(3):
+            for c in range(3):
+                pap = [paper[r * size+i][c * size:(c + 1) * size] for i in range(size)]
+                check(pap)
 
-for paper in papers:
-    if not is_ok(paper):
-
-
-
+check(paper)
+print(dic[-1])
+print(dic[0])
+print(dic[1])
 
 

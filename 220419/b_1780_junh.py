@@ -11,7 +11,6 @@ def check(paper):
         dic[li[0]] += 1
     else:
         size = len(paper)//3
-        if not size: return
         for r in range(3):
             for c in range(3):
                 pap = [paper[r * size+i][c * size:(c + 1) * size] for i in range(size)]

@@ -14,9 +14,9 @@ def dfs(n):
             else:
                 dfs(i)
 
-for _ in range(2):
-    for i in range(N):
-        dfs(i)
+for i in range(N):
+    dfs(i)
+dfs(0)
 
 for i in range(N):
     print(*mat[i])

@@ -8,9 +8,9 @@ def solution(lines):
 
     for line in lines:
         d, t, r = line.split()
-        s = d + ' ' + t
+        e = d + ' ' + t
         # 시간 데이터로 바꾸고, 1초로 범위를 잡기위해 0.5를 더한다(시작, 끝 시간을 0.5초씩 늘려서 1초 범위까지 커버하게)
-        e = datetime.fromisoformat(s) + timedelta(seconds=0.5)
+        e = datetime.fromisoformat(e) + timedelta(seconds=0.5)
         # float로 바꿔서
         r = float(r.strip('s'))
         # 범위가 1초면 안되고 0.999로 잡아야 원래 시간까지 합쳐서 1초가 됨

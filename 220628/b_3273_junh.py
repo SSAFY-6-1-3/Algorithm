@@ -1,4 +1,3 @@
-
 n = int(input())
 li = list(map(int, input().split()))
 x = int(input())
@@ -10,6 +9,5 @@ for i in range(n):
     if jjak in nums:
         answer += 1
     nums.add(li[i])
-
 
 print(answer)

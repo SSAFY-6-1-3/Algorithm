@@ -1,35 +1,44 @@
 import sys
+from collections import deque
 
 input = sys.stdin.readline
+
 N, M = map(int, input().split())
-tree = [set() for _ in range(N+1)]
+tree = [[] for _ in range(N+1)]
 
 for _ in range(M):
     a, b = map(int, input().split())
-    tree[b].add(a)
+    tree[b].append(a)
 
-def dfs(n):
-    visited[n] = True
-    tmp = {n}
-    for i in tree[n]:
-        if visited[i]:
-            tmp.update(tree[i])
-        else:
-            tmp.update(dfs(i))
-    tree[n].update(tmp)
+def bfs(s):
+    q = deque([s])
+    visited = [False] * (N+1)
+    visited[s] = True
+    cnt = 1
 
-    return tmp
+    while q:
+        n = q.popleft()
+
+        for i in tree[n]:
+            if visited[i]: continue
+            visited[i] = True
+            q.append(i)
+            cnt += 1
+
+    return cnt
 
 
-answer = [0]
-for i in range(1, N):
-    visited = [0] * (N+1)
-    tree[i] = dfs(i)
+answer = []
+answer_max = 0
 
-    if len(tree[i]) > len(tree[answer[0]]):
+for i in range(1, N+1):
+    tmp = bfs(i)
+    if tmp > answer_max:
         answer = [i]
-    elif len(tree[i]) == len(tree[answer[0]]):
+        answer_max = tmp
+    elif tmp == answer_max:
         answer.append(i)
 
-print(' '.join(map(str, answer)))
-print(tree)
+
+
+print(*answer)

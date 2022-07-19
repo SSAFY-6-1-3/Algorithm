@@ -1,4 +1,3 @@
-# 7% 틀림
 N = int(input())
 min_nums = [0] * 3
 max_nums = [0] * 3

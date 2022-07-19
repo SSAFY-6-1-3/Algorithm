@@ -27,4 +27,6 @@ if N == 1:
 else:
     for i in range(n + 2):
         print(''.join(stars[i]))
-
+'''
+두번째에 엔터쳐져야함
+'''

@@ -3,7 +3,7 @@ def solution(name):
 
 
     def dfs(now, dir, move):
-        if now < -len(name) or now >= len(name): return 0
+        if now <= -len(name) or now >= len(name): return 0
         a = ord('A')
         b = ord(name[now])
 

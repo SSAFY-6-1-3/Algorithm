@@ -1,4 +1,6 @@
+import sys
 
+input = sys.stdin.readline
 N, M = map(int, input().split())
 days = [int(input()) for _ in range(N)]
 min_k = float('inf')
@@ -8,7 +10,7 @@ def check(K):
     for i in range(N):
         need = days[i]
         if left >= need:
-            continue
+            left -= need
         elif need > K:
             return False
         else:
@@ -30,5 +32,5 @@ def bin(s, e):
     else:
         bin(mid+1, e)
 
-bin(0, max(days))
+bin(0, sum(days))
 print(min_k)

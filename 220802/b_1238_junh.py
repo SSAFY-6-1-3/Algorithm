@@ -1,6 +1,7 @@
 import sys
 from collections import deque
-sys.stdin.re
+
+input = sys.stdin.readline
 N, M, X = map(int, input().split())
 routes = [[] for _ in range(N+1)]
 dists = [[100000] * (N + 1) for _ in range(N + 1)]

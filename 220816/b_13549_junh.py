@@ -1,39 +1,30 @@
-from collections import deque
+import heapq
 
 N, K = map(int, input().split())
-
 
 def seek():
     if N > K:
         return N - K
-    q = deque([(N, 0)])
-    visited = {N,}
-    max_n = 999999
+    dp = [999999] * 100001
+    q = [(0, N)]
+    heapq.heapify(q)
+
     while q:
-        now, step = q.popleft()
-
-        if now >= max_n:
-            continue
-        for p in [now-1, now+1]:
-            if p in visited: continue
-            visited.add(p)
-
-            if p == K:
-                return step+1
-
-            q.append((p, step+1))
-
+        step, now = heapq.heappop(q)
+        if now == K:
+            return step
         tmp = now
-        while tmp < min(K, 100000) :
+        while 0 < tmp <= 50000 :
             tmp *= 2
 
-            if tmp == K:
-                return step
-            if tmp in visited: continue
-            visited.add(tmp)
-            q.append((tmp, step))
+            if dp[tmp] > step:
+                dp[tmp] = step
+                heapq.heappush(q, (step, tmp))
 
-            if K < tmp < max_n:
-                max_n = tmp
-                break
+
+        for p in [now-1, now+1]:
+            if p not in range(100001) or dp[p] <= step + 1 : continue
+            dp[p] = step + 1
+            heapq.heappush(q, (step+1, p))
+
 print(seek())

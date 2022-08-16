@@ -16,8 +16,9 @@ for _ in range(T):
             break
         # 4글자로 맞춰주기
         if len(now) < 4:
-            zero = '0' * (4 - len(now))
-            now = zero + now
+            # zero = '0' * (4 - len(now))
+            # now = zero + now
+            now.zfill(4)
 
         if int(now) > 0:
             if not nums[int(now)-1]:

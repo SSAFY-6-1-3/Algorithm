@@ -3,44 +3,36 @@ import sys
 input = sys.stdin.readline
 n, m = map(int, input().split())
 names = [int(input()) for _ in range(n)]
-# [[마지막 칸, 마지막으로 쓴 글자 idx]]
-lines = [[0, -1]]
+dp = [float('inf')] * n
 
-for name in names:
-    line = lines[-1]
-    if line[0] + bool(line[0]) + name > m:
-        lines.append([0, line[1]])
-        line = lines[-1]
-    line[0] += bool(line[0]) + name
-    line[1] += 1
-print(lines)
+last_line = names[-1]
+dp[-1] = 0
+for i in range(n-2, -1, -1):
+    last_line += 1 + names[i]
+    if last_line <= m:
+        dp[i] = 0
+    else:
+        break
 
-sum = 0
-for i in range(len(lines)-1):
-    a = (m - lines[i][0]) ** 2 + (m - lines[i+1][0]) ** 2
-    last = lines[i][1]
-    changed = True
-    while changed:
-        changed = False
-        if lines[i+1][0] + 1 + names[last] <= m:
-            b = (m - lines[i][0] + 1 + names[last]) ** 2 + (m - lines[i+1][0] - 1 - names[last]) ** 2
-            if a > b:
-                lines[i] = [lines[i][0] - 1 - names[last], lines[i][1] + 1]
-                lines[i+1][0] = lines[i+1][0] + 1 + names[last]
-                last = lines[i][1]
-                a = b
-                changed = True
-    print(i, a)
-    sum += (m - lines[i][0]) ** 2
-print(lines)
-print(sum)
+for i in range(n-1, -1, -1):
+    if not dp[i]: continue
+    now = names[i]
+    dp[i] = min(dp[i], (m-now) ** 2 + dp[i+1])
+
+    for j in range(i + 1, n):
+        if now + 1 + names[j] > m:
+            break
+        now += 1 + names[j]
+        dp[i] = min(dp[i], (m - now) ** 2 + dp[j+1])
+
+print(dp[0])
 
 '''
 6 10
-1
-4
-1
-1
-4
+1   4 + 16
+4   16 + 16
+1   4
+1   16
+4   36
 8
 '''

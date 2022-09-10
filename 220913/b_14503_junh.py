@@ -11,6 +11,10 @@ class Vacuum:
         self.y = y
         self.x = x
         self.dir = d
+        if d == 1:  ## 입력방향 반대
+            self.dir = 3
+        elif d == 3:
+            self.dir = 1
         self.cleaned = 0
 
     def clean(self):
@@ -26,9 +30,9 @@ class Vacuum:
         ny = self.y + Vacuum.dY[self.dir]
         nx = self.x + Vacuum.dX[self.dir]
 
-        if ny not in range(N) or nx not in range(M):
+        if mat[ny][nx] == 1:
             return False
-        if mat[ny][nx] == 1 or (to_clean and mat[ny][nx] == 2) :
+        elif mat[ny][nx] == 2 and to_clean:
             return False
         return ny, nx
 
@@ -55,7 +59,6 @@ class Vacuum:
 vac = Vacuum(r, c, d)
 while True:
     vac.clean()
-    print(vac.y, vac.x)
     if vac.func12():
         continue
     if vac.back():
@@ -63,5 +66,3 @@ while True:
     break
 
 print(vac.cleaned)
-for l in mat:
-    print(l)

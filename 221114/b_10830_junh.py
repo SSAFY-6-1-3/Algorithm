@@ -24,6 +24,7 @@ def square(arr, t):
         result = multi(result, arr)
     return result
 
+
 for i in range(N):
     for j in range(N):
         A[i][j] %= 1000

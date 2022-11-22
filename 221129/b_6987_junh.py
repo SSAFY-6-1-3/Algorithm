@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 matches = []
 
 def make_matches(team):
@@ -9,38 +7,37 @@ def make_matches(team):
         matches.append([team, i])
     make_matches(team + 1)
 
+
 make_matches(0)
-print(matches)
 results = []
 
-
-def make_results(idx, result = [0] * 18):
-    if idx == 3:
-        results.append(result)
-        return
+def make_results(idx):
+    global found
 
     a, b = matches[idx]
-    a *= 3
-    b *= 3
-
-    result[a] += 1
-    result[b+2] += 1
-    make_results(idx+1, deepcopy(result))
-    result[a] -= 1
-    result[b+2] -= 1
-
-    result[a+1] += 1
-    result[b+1] += 1
-    make_results(idx+1, deepcopy(result))
-    result[a+1] -= 1
-    result[b+1] -= 1
-
-    result[a+2] += 1
-    result[b] += 1
-    make_results(idx+1, deepcopy(result))
-    result[a+2] -= 1
-    result[b] -= 1
+    for i in range(3):
+        ai = 3*a + i
+        bi = 3*b + (2-i)
+        if not result[ai] or not result[bi]:
+            continue
+        result[ai] -= 1
+        result[bi] -= 1
+        if idx == 14:
+            if sum(result) == 0:
+                found = 1
+        else:
+            make_results(idx+1)
+        if found: return
+        result[ai] += 1
+        result[bi] += 1
 
 
-make_results(0)
-print(results)
+answer = ''
+for _ in range(4):
+    result = list(map(int, input().split()))
+    found = 0
+    make_results(0)
+    answer += str(found) + ' '
+
+print(answer)
+

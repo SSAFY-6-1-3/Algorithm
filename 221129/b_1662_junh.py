@@ -2,25 +2,17 @@
 st = input()
 stack = []
 tmp = ''
-idx = 0
+length = 0
 
-while idx < len(st):
-    if st[idx] == ')':
-        popped = stack.pop()
-        b = ''
-        while popped != '(':
-            b += popped
-            popped = stack.pop()
-
-        stack.append(b * a)
-    elif st[idx] == '(':
-        stack.append(st[idx])
+for c in st:
+    if c.isdigit():
+        length += 1
+        tmp = c
+    elif c == '(':
+        stack.append((tmp, length - 1))
+        length = 0
     else:
-        last = st[idx]
-        stack.append(1)
-    idx += 1
+        multi, preL = stack.pop()
+        length = (int(multi) * length) + preL
 
-answer = 0
-for c in stack:
-    answer += len(c)
-print(answer)
+print(length)

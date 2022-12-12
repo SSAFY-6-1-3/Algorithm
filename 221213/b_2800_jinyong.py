@@ -1,26 +1,33 @@
 formula = input()
 n = len(formula)
+answer = set()
 
 
-def solution(idx, result, count):
+def solution(idx, result, stack):
 
     if idx == n:
-        print(result)
+        if result != formula:
+            answer.add(result)
         return
 
     if formula[idx] == "(":
-        solution(idx + 1, result, count + 1)
-        solution(idx + 1, result + "(", count)
+        solution(idx + 1, result + "(", stack + [0])
+        solution(idx + 1, result, stack + [1])
 
     elif formula[idx] == ")":
+        is_correct = stack.pop()
 
-        if count == 0:
-            solution(idx + 1, result + ")", 0)
+        if is_correct:
+            solution(idx + 1, result, stack)
         else:
-            solution(idx + 1, result, count - 1)
+            solution(idx + 1, result + ")", stack)
 
     else:
-        solution(idx + 1, result + formula[idx], count)
+        solution(idx + 1, result + formula[idx], stack)
 
 
-print(solution(0, "", 0))
+solution(0, "", [])
+
+ans_lst = sorted(list(answer))
+for ans in ans_lst:
+    print(ans)
